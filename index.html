@@ -4,14 +4,8 @@
 <head>
   <!-- Recapture-->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV"></script>
-  <script>
-  function onClick(e) {
-    e.preventDefault();
-    grecaptcha.enterprise.ready(async () => {
-      const token = await grecaptcha.enterprise.execute('6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV', {action: 'LOGIN'});
-    });
-  }
-</script>
+  <!-- Your code -->
+
 
   <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HN58ZL0L7Q"></script>
@@ -157,8 +151,12 @@
                        Explore our programs and embark on a journey of learning and achievement today.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
-                        Sign-Up
+                     <button class="g-recaptcha"
+                             data-sitekey="6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV"
+                             data-callback='onSubmit'
+                             data-action='submit'>
+                                     Submit
+                      </button>
                       </a>
                     </div>
                   </div>
