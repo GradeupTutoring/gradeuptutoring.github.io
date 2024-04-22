@@ -54,6 +54,16 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ <script>
+    function onSubmit(token) {
+      document.getElementById("signup-form").submit();
+    }
+  </script>
+  <style>
+    .g-recaptcha {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -129,7 +139,7 @@
                        We're committed to providing personalized support and guidance to help you reach your academic goals. 
                        Explore our programs and embark on a journey of learning and achievement today.
                     </p>
-                   <div class="btn-box">
+                  <div class="btn-box">
     <button class="btn1" onclick="showRecaptcha()">
       Sign-Up
     </button>
@@ -865,12 +875,17 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
-<script>
+    <script>
     function showRecaptcha() {
-      grecaptcha.execute('6LfoC8IpAAAAACVJtFfhS-d6sS8GrzJLiphSBPbp', {action: 'signup'}).then(function(token) {
-        document.getElementById('recaptchaResponse').value = token;
-        onSubmit(token);
+      document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        grecaptcha.execute('6LfoC8IpAAAAACVJtFfhS-d6sS8GrzJLiphSBPbp', {action: 'signup'}).then(function(token) {
+          document.getElementById('recaptchaResponse').value = token;
+          onSubmit(token);
+        });
       });
+      grecaptcha.reset(); // Reset the reCAPTCHA widget
+      document.querySelector('.g-recaptcha').style.display = 'block'; // Show the reCAPTCHA widget
     }
   </script>
 </body>
