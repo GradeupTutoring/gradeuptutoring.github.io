@@ -2,6 +2,16 @@
 <html>
 
 <head>
+  <!-- Recapture-->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV"></script>
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV', {action: 'LOGIN'});
+    });
+  }
+</script>
 
   <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HN58ZL0L7Q"></script>
