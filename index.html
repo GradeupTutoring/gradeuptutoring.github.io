@@ -54,16 +54,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
- <script>
-    function onSubmit(token) {
-      document.getElementById("signup-form").submit();
-    }
-  </script>
-  <style>
-    .g-recaptcha {
-      display: none;
-    }
-  </style>
+ 
 </head>
 
 <body>
@@ -140,16 +131,10 @@
                        Explore our programs and embark on a journey of learning and achievement today.
                     </p>
                   <div class="btn-box">
-    <button class="btn1" onclick="showRecaptcha()">
-      Sign-Up
-    </button>
-  </div>
-
-  <form id="signup-form" action="https://forms.gle/f8W8Rn9cFjPiSHQy5" method="POST">
-    <!-- Your sign-up form fields go here -->
-    <!-- You can hide these fields and fill them dynamically with JavaScript if needed -->
-    <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
-  </form>
+                      <a href="https://forms.gle/f8W8Rn9cFjPiSHQy5" class="btn1">   
+                        Sign-Up
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -874,8 +859,7 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
-  <!-- End Google Map -->
-   
+  <!-- End Google Map --> 
 </body>
 
 </html>
