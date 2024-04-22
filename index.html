@@ -2,10 +2,18 @@
 <html>
 
 <head>
-  <!-- Recapture-->
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV"></script>
+ 
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfoC8IpAAAAACVJtFfhS-d6sS8GrzJLiphSBPbp"></script>
   <!-- Your code -->
 
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LfoC8IpAAAAACVJtFfhS-d6sS8GrzJLiphSBPbp', {action: 'LOGIN'});
+    });
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HN58ZL0L7Q"></script>
@@ -212,7 +220,7 @@
                       <a href="" class="btn1">
                         Sign-Up
                       </a>
-                      <div class="g-recaptcha" data-sitekey="6Lff48IpAAAAAMLyyxpYJ5vINMZKgKyQLX7q4sKV"></div>
+                      <div class="g-recaptcha" data-sitekey="siyakey"></div>
                     </div>
                   </div>
                 </div>
