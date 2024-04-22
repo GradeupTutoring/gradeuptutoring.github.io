@@ -1,4 +1,16 @@
-
+<script>
+    function showRecaptcha() {
+      document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        grecaptcha.execute('6LfoC8IpAAAAACVJtFfhS-d6sS8GrzJLiphSBPbp', {action: 'signup'}).then(function(token) {
+          document.getElementById('recaptchaResponse').value = token;
+          onSubmit(token);
+        });
+      });
+      grecaptcha.reset(); // Reset the reCAPTCHA widget
+      document.querySelector('.g-recaptcha').style.display = 'block'; // Show the reCAPTCHA widget
+    }
+  </script>
 
 
 /* Preloader
